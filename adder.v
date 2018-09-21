@@ -30,10 +30,10 @@ module structuralFullAdder
     wire AandC;
     wire BandC;
 
-    xor xorgate(AxorB, a, b);
-    xor xorgate(sum, AxorB, carryin);
-    and andgate(AandB, a, b);
-    and andgate(AandC, a, carryin);
-    and andgate(BandC, b, carryin);
-    or orgate(carryout, AandB, AandC, BandC);
+    `XOR xorgate(AxorB, a, b);
+    `XOR xorgate(sum, AxorB, carryin);
+    `AND andgate(AandB, a, b);
+    `AND andgate(AandC, a, carryin);
+    `AND andgate(BandC, b, carryin);
+    `OR orgate(carryout, AandB, AandC, BandC);
 endmodule

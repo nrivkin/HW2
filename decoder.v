@@ -29,16 +29,16 @@ module structuralDecoder
     wire A0andnA1;
     wire A0andA1;
     
-    not A0inv(nA0, address0);
-    not A1inv(nA1, address1);
-    and andgate(nA0andnA1, nA0, nA1);
-    and andgate(nA0andA1, nA0, address1);
-    and andgate(A0andnA1, address0, nA1);
-    and andgate(A0andA1, address0, address1);
+    `NOT A0inv(nA0, address0);
+    `NOT A1inv(nA1, address1);
+    `AND andgate(nA0andnA1, nA0, nA1);
+    `AND andgate(nA0andA1, nA0, address1);
+    `AND andgate(A0andnA1, address0, nA1);
+    `AND andgate(A0andA1, address0, address1);
 
-    and andgate(out0, nA0andnA1, enable);
-    and andgate(out1, A0andnA1, enable);
-    and andgate(out2, nA0andA1, enable);
-    and andgate(out3, A0andA1, enable);
+    `AND andgate(out0, nA0andnA1, enable);
+    `AND andgate(out1, A0andnA1, enable);
+    `AND andgate(out2, nA0andA1, enable);
+    `AND andgate(out3, A0andA1, enable);
 endmodule
 
