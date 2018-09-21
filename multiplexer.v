@@ -24,5 +24,29 @@ module structuralMultiplexer
     input in0, in1, in2, in3
 );
     // Your multiplexer code here
+    wire nA0;
+    wire nA1;
+    wire nA1andnA0;
+    wire nA1andA0;
+    wire A1andnA0;
+    wire A1andA0;
+    wire o0;
+    wire o1;
+    wire o2;
+    wire o3;
+
+    not notgate(nA0, address0);
+    not notgate(nA1, address1);
+    and andgate(nA1andnA0, nA1, nA0);
+    and andgate(nA1andA0, nA1, address0);
+    and andgate(A1andnA0, address1, nA0);
+    and andgate(A1andA0, address1, address0);
+
+    and andgate(o0, in0, nA1andnA0);   
+    and andgate(o2, in2, A1andnA0);   
+    and andgate(o1, in1, nA1andA0);   
+    and andgate(o3, in3, A1andA0);
+
+    or orgate(out, o0, o1, o2, o3);
 endmodule
 

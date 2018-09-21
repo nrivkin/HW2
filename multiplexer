@@ -1,0 +1,55 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x8f8160 .scope module, "behavioralMultiplexer" "behavioralMultiplexer" 2 7;
+ .timescale 0 0;
+v0x909120_0 .net "address", 1 0, L_0x92eb40; 1 drivers
+v0x92d7c0_0 .net "address0", 0 0, C4<z>; 0 drivers
+v0x92d860_0 .net "address1", 0 0, C4<z>; 0 drivers
+v0x92d900_0 .net "in0", 0 0, C4<z>; 0 drivers
+v0x92d9b0_0 .net "in1", 0 0, C4<z>; 0 drivers
+v0x92da50_0 .net "in2", 0 0, C4<z>; 0 drivers
+v0x92db30_0 .net "in3", 0 0, C4<z>; 0 drivers
+v0x92dbd0_0 .net "inputs", 3 0, L_0x92e9b0; 1 drivers
+v0x92dcc0_0 .net "out", 0 0, L_0x92ec70; 1 drivers
+L_0x92e9b0 .concat [ 1 1 1 1], C4<z>, C4<z>, C4<z>, C4<z>;
+L_0x92eb40 .concat [ 1 1 0 0], C4<z>, C4<z>;
+L_0x92ec70 .part/v L_0x92e9b0, L_0x92eb40, 1;
+S_0x8f77d0 .scope module, "structuralMultiplexer" "structuralMultiplexer" 2 20;
+ .timescale 0 0;
+L_0x92e3d0 .functor NOT 1, C4<z>, C4<0>, C4<0>, C4<0>;
+L_0x92ed90 .functor NOT 1, C4<z>, C4<0>, C4<0>, C4<0>;
+L_0x92ee50 .functor AND 1, L_0x92ed90, L_0x92e3d0, C4<1>, C4<1>;
+L_0x92ef80 .functor AND 1, L_0x92ed90, C4<z>, C4<1>, C4<1>;
+L_0x92f030 .functor AND 1, C4<z>, L_0x92e3d0, C4<1>, C4<1>;
+L_0x92f0e0 .functor AND 1, C4<z>, C4<z>, C4<1>, C4<1>;
+L_0x92f140 .functor AND 1, C4<z>, L_0x92ee50, C4<1>, C4<1>;
+L_0x92f220 .functor AND 1, C4<z>, L_0x92f030, C4<1>, C4<1>;
+L_0x92f350 .functor AND 1, C4<z>, L_0x92ef80, C4<1>, C4<1>;
+L_0x92f430 .functor AND 1, C4<z>, L_0x92f0e0, C4<1>, C4<1>;
+L_0x92f570 .functor OR 1, L_0x92f140, L_0x92f350, L_0x92f220, L_0x92f430;
+v0x92dd60_0 .net "A1andA0", 0 0, L_0x92f0e0; 1 drivers
+v0x92de20_0 .net "A1andnA0", 0 0, L_0x92f030; 1 drivers
+v0x92dec0_0 .net "address0", 0 0, C4<z>; 0 drivers
+v0x92df60_0 .net "address1", 0 0, C4<z>; 0 drivers
+v0x92dfe0_0 .net "in0", 0 0, C4<z>; 0 drivers
+v0x92e080_0 .net "in1", 0 0, C4<z>; 0 drivers
+v0x92e120_0 .net "in2", 0 0, C4<z>; 0 drivers
+v0x92e1c0_0 .net "in3", 0 0, C4<z>; 0 drivers
+v0x92e2b0_0 .net "nA0", 0 0, L_0x92e3d0; 1 drivers
+v0x92e350_0 .net "nA1", 0 0, L_0x92ed90; 1 drivers
+v0x92e450_0 .net "nA1andA0", 0 0, L_0x92ef80; 1 drivers
+v0x92e4f0_0 .net "nA1andnA0", 0 0, L_0x92ee50; 1 drivers
+v0x92e600_0 .net "o0", 0 0, L_0x92f140; 1 drivers
+v0x92e6a0_0 .net "o1", 0 0, L_0x92f350; 1 drivers
+v0x92e7c0_0 .net "o2", 0 0, L_0x92f220; 1 drivers
+v0x92e860_0 .net "o3", 0 0, L_0x92f430; 1 drivers
+v0x92e720_0 .net "out", 0 0, L_0x92f570; 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "multiplexer.v";
