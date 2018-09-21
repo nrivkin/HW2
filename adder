@@ -1,0 +1,50 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x19e9ef0 .scope module, "behavioralFullAdder" "behavioralFullAdder" 2 7;
+ .timescale 0 0;
+v0x19ea0d0_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0x19fb6f0_0 .net *"_s11", 1 0, L_0x19fca80; 1 drivers
+v0x19fb790_0 .net *"_s13", 1 0, L_0x19fcc90; 1 drivers
+v0x19fb830_0 .net *"_s16", 0 0, C4<0>; 1 drivers
+v0x19fb8e0_0 .net *"_s17", 1 0, L_0x19fce00; 1 drivers
+v0x19fb980_0 .net *"_s3", 1 0, L_0x19fc770; 1 drivers
+v0x19fba60_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0x19fbb00_0 .net *"_s7", 1 0, L_0x19fc8c0; 1 drivers
+v0x19fbbf0_0 .net "a", 0 0, C4<z>; 0 drivers
+v0x19fbc90_0 .net "b", 0 0, C4<z>; 0 drivers
+v0x19fbd90_0 .net "carryin", 0 0, C4<z>; 0 drivers
+v0x19fbe30_0 .net "carryout", 0 0, L_0x19fc580; 1 drivers
+v0x19fbf40_0 .net "sum", 0 0, L_0x19fc650; 1 drivers
+L_0x19fc580 .part L_0x19fce00, 1, 1;
+L_0x19fc650 .part L_0x19fce00, 0, 1;
+L_0x19fc770 .concat [ 1 1 0 0], C4<z>, C4<0>;
+L_0x19fc8c0 .concat [ 1 1 0 0], C4<z>, C4<0>;
+L_0x19fca80 .arith/sum 2, L_0x19fc770, L_0x19fc8c0;
+L_0x19fcc90 .concat [ 1 1 0 0], C4<z>, C4<0>;
+L_0x19fce00 .arith/sum 2, L_0x19fca80, L_0x19fcc90;
+S_0x19e9fe0 .scope module, "structuralFullAdder" "structuralFullAdder" 2 19;
+ .timescale 0 0;
+L_0x19fbd10 .functor XOR 1, C4<z>, C4<z>, C4<0>, C4<0>;
+L_0x19fcf40 .functor XOR 1, L_0x19fbd10, C4<z>, C4<0>, C4<0>;
+L_0x19fcff0 .functor AND 1, C4<z>, C4<z>, C4<1>, C4<1>;
+L_0x19fd0f0 .functor AND 1, C4<z>, C4<z>, C4<1>, C4<1>;
+L_0x19fd1a0 .functor AND 1, C4<z>, C4<z>, C4<1>, C4<1>;
+L_0x19fd200 .functor OR 1, L_0x19fcff0, L_0x19fd0f0, L_0x19fd1a0, C4<0>;
+v0x19fbfe0_0 .net "AandB", 0 0, L_0x19fcff0; 1 drivers
+v0x19fc0a0_0 .net "AandC", 0 0, L_0x19fd0f0; 1 drivers
+v0x19fc140_0 .net "AxorB", 0 0, L_0x19fbd10; 1 drivers
+v0x19fc1e0_0 .net "BandC", 0 0, L_0x19fd1a0; 1 drivers
+v0x19fc260_0 .net "a", 0 0, C4<z>; 0 drivers
+v0x19fc300_0 .net "b", 0 0, C4<z>; 0 drivers
+v0x19fc3a0_0 .net "carryin", 0 0, C4<z>; 0 drivers
+v0x19fc440_0 .net "carryout", 0 0, L_0x19fd200; 1 drivers
+v0x19fc4e0_0 .net "sum", 0 0, L_0x19fcf40; 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "adder.v";
