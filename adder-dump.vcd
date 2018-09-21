@@ -1,0 +1,102 @@
+$date
+	Fri Sep 21 13:44:57 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module behavioralFullAdder $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # carryin $end
+$var wire 1 $ carryout $end
+$var wire 1 % sum $end
+$upscope $end
+$scope module testFullAdder $end
+$var wire 1 & carryout $end
+$var wire 1 ' sum $end
+$var reg 1 ( a $end
+$var reg 1 ) b $end
+$var reg 1 * carryin $end
+$scope module adder $end
+$var wire 1 + AandB $end
+$var wire 1 , AandC $end
+$var wire 1 - AxorB $end
+$var wire 1 . BandC $end
+$var wire 1 / a $end
+$var wire 1 0 b $end
+$var wire 1 1 carryin $end
+$var wire 1 & carryout $end
+$var wire 1 ' sum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+x%
+x$
+z#
+z"
+z!
+$end
+#1000000
+1'
+1*
+11
+#2000000
+1-
+0*
+01
+1)
+10
+#3000000
+1&
+0'
+1.
+1*
+11
+#4000000
+0&
+1'
+0.
+0*
+01
+0)
+00
+1(
+1/
+#5000000
+1&
+0'
+1,
+1*
+11
+#6000000
+0,
+0-
+1+
+0*
+01
+1)
+10
+#7000000
+1'
+1,
+1.
+1*
+11
+#8000000
